@@ -1,0 +1,18 @@
+    body {
+        color: white;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(./fundoSite.jpg);
+        background-size: 110%;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
