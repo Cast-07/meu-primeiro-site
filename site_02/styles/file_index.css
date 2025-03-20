@@ -1,0 +1,168 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f0f0ea;
+    color: #333;
+    width: 100vw;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Links */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #057c7c;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu a:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Títulos */
+h1 {
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-weight: 600;
+    color: #444;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Texto */
+p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+/* Lista */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    font-size: 18px;
+    color: red;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Container para personagens */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+/* Imagens */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+    
+}  
