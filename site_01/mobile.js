@@ -1,15 +1,18 @@
 // Função para animação de rolagem suave ao clicar nos links do menu
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1); // Pega o ID do destino
-        const targetElement = document.getElementById(targetId);
-        
-        // Rola suavemente até a seção de destino
-        window.scrollTo({
-            top: targetElement.offsetTop - 60, // Ajuste para o topo da página
-            behavior: 'smooth'
-        });
+        const targetId = (anchor.classList.contains('social-icon')) ? anchor.getAttribute('href') : anchor.getAttribute('href');
+
+        if (!(/http/.test(targetId))) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId); 
+
+            // Rola suavemente até a seção de destino
+            window.scrollTo({
+                top: targetElement.offsetTop - 60, // Ajuste para o topo da página
+                behavior: 'smooth'
+            });
+        } 
     });
 });
 
