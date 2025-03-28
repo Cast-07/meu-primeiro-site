@@ -1,18 +1,335 @@
-    body {
-        color: white;
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+/* Estilo do menu */
+nav {
+    background-color: #222;
+    padding: 18px 0;  /* Aumentando o padding vertical para engrossar a barra */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centraliza os itens no menu */
+    margin: 0;
+    padding: 0;
+    animation: slideIn 0.5s ease-out;
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+/* Estilo dos links de navegação */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6f00;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff6f00;
+    transform: translateY(-5px);
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilo dos ícones sociais */
+.social-links {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os ícones */
+    justify-content: center; /* Centraliza os ícones sociais */
+    align-items: center; /* Alinha os ícones verticalmente */
+    margin-top: 10px; /* Espaço superior para os ícones sociais */
+}
+
+.social-icon {
+    color: white;
+    font-size: 18px; /* Tamanho dos ícones */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+    opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
+/* Estilo do conteúdo principal */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Estilo das seções */
+section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+    animation: fadeInUp 1s ease-out;
+}
+
+section h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+section p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+section img {
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+section ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Animação de Fade-In para o Header */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de Slide-In para o Menu */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de Fade-In para o Conteúdo */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
-    body {
-        width: 100vw;
-        height: 100vh;
-        background-image: url(./fundoSite.jpg);
-        background-size: 110%;
+    nav ul li {
+        margin: 10px 0;
     }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
+    section img {
+        max-width: 100%;
     }
 
-    h1 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
+    main {
+        padding: 20px;
+  }
+}
+/* Animação de Fade-In nas seções */
+section {
+    opacity: 0;
+    transform: translateY(20px) rotate(5deg);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Adicionando a classe .visible para ativar a animação */
+section.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(0); /* Resetando a rotação ao aparecer */
+}
+
+/* Efeito de zoom nas imagens com transição suave */
+section img {
+    transition: transform 0.5s ease-out;
+}
+
+/* Efeito de Parallax simples nas seções */
+section:nth-child(odd) {
+    transform: translate3d(0, 0, 10px);
+    transition: transform 0.4s ease-out;
+}
+
+/* Animação de "pulse" para os ícones sociais */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
     }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Cor mais suave na barra de navegação ao rolar */
+nav {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect nos links de navegação */
+nav ul li a:hover {
+    color: #ff6f00;
+    transform: translateY(-6px);
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de sombreamento e elevação nas seções */
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para as imagens no hover */
+section img:hover {
+    transform: scale(1.1); /* Efeito de zoom sutil nas imagens */
+}
+
+/* Barra de navegação com efeito de transição suave */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(34, 34, 34, 1);
+    padding: 18px 0;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out; /* Efeito suave de mudança de cor */
+}
+
+/* Estilos de Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section img {
+        max-width: 100%;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
