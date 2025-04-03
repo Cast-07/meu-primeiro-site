@@ -52,6 +52,10 @@ nav ul {
 nav ul li {
     margin: 0 20px;
     position: relative;
+    display: flex;
+    align-items: center;
+   
+    
 }
 
 /* Estilo dos links de navegação */
@@ -332,4 +336,11 @@ nav {
     main {
         padding: 20px;
     }
+}
+img {
+    transition: transform 0.5s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(10deg);
 }
