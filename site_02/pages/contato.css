@@ -37,16 +37,29 @@ a:hover {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     background-color: #057c7c;
-    padding: 10px 20px; /* Tornando a navbar mais fina */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideDown 1s ease-out;
     width: 100%;
+    height: 22vh; 
     position: fixed;
     top: 0;
-    left: 0;
+    padding: 0 20px; /* Adicionando padding para um melhor espaçamento interno */
+}
+/* Para tornar a navbar responsiva em telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Coloca os itens em uma coluna */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        word-spacing: normal; /* Remove o espaçamento excessivo */
+    }
+
+    .navbar .left, .navbar .right {
+        width: 100%;
+        justify-content: center; /* Centraliza os itens */
+        margin-bottom: 10px;
+    }
 }
 
 /* Logo */
@@ -57,25 +70,9 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
-/* Estilos para os links do menu */
-.menu a {
-    color: white;
-    padding: 8px 15px; /* Ajustado o padding para melhor visual */
-    font-size: 18px; /* Tamanho de fonte ajustado */
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-
-.menu a:hover {
-    background-color: #575757;
-    transform: scale(1.05);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
 /* Estilos para os botões das redes sociais */
 a {
-    display: inline-flex;
+    display: inline-flex; 
     align-items: center;
     text-decoration: none;
     color: white;
@@ -165,4 +162,80 @@ a:nth-child(3) {
         font-size: 14px;
         padding: 8px 12px;
     }
+}
+/* Imagens */
+img {
+    height: auto;
+    transition: transform 0.5s ease;
+    animation: float 5s ease-in-out infinite;
+}
+
+img:hover {
+    transform: scale(1.08) rotate(1deg);
+}
+/* Estilização da seção de menu */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 8px;
+}
+.menu a {
+    font-size: 18px; /* Tamanho confortável de leitura */
+    font-weight: 500; /* Peso para destacar sem exagero */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    text-transform: uppercase; /* Deixa o menu todo em caixa alta */
+    color: #ffffff;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #ffe;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+@keyframes inflate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+.menu a:hover {
+    animation: inflate 0.6s ease-in-out;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0.9px);
+    }
+}
+
+.navbar img {
+    animation: bounce 1s infinite ease-in-out;
 }

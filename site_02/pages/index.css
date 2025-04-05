@@ -67,10 +67,10 @@ a:hover {
 }
 
 .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 8px;
+    transform: scale(1.1); /* “Infla” o link */
+    color: #f0f0ea; /* Cor opcional ao passar o mouse */
 }
+
 .menu a {
     font-size: 18px; /* Tamanho confortável de leitura */
     font-weight: 500; /* Peso para destacar sem exagero */
@@ -164,6 +164,7 @@ img:hover {
 .menu a:hover {
     animation: inflate 0.6s ease-in-out;
 }
+
 /* Animações */
 @keyframes fadeIn {
     from { opacity: 0; }
